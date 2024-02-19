@@ -1,0 +1,53 @@
+@startuml
+
+skinparam sequence{
+LifeLineBackgroundColor #FFAE3D
+}
+
+Actor User
+
+Box "World of the fittest"
+participant Game_Engine
+participant Evaluation
+participant Simulator
+participant Visualizer
+endbox
+
+User -> Game_Engine: start simulation
+activate User
+activate Game_Engine
+Game_Engine -> User: inform user
+deactivate Game_Engine
+
+Game_Engine -> Evaluation: start evaluator
+activate Evaluation
+Evaluation -> User: Request starting values
+deactivate Evaluation
+
+User -> Evaluation: set values
+activate Evaluation
+Evaluation -> Simulator: transfer starting values
+deactivate Evaluation
+activate Simulator
+Simulator -> Visualizer: transfer data
+activate Visualizer
+Simulator -> Simulator: calculate n-steps
+Simulator -> Visualizer: transfer data
+Visualizer -> User: show simulation
+deactivate Visualizer
+Simulator -> Evaluation: request statistic
+deactivate Simulator
+activate Evaluation
+Evaluation -> Visualizer: transfer data
+deactivate Evaluation
+activate Visualizer
+Visualizer -> User: show statistics
+deactivate Visualizer
+User -> Game_Engine: stop simulation
+activate Game_Engine
+Game_Engine -> User: simulation stopped
+deactivate Game_Engine
+deactivate User
+
+@enduml
+

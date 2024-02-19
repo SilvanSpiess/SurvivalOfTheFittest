@@ -1,0 +1,29 @@
+git init(--bear)				(initialises git repo) (--bear creates new main branch)
+git clone <URL>				(clones already existing repo)
+git add <file.cpp> <.>
+git commit (--amend) -m "message" <file.cpp>	(--amend "<newName>" chnages (latest) commit msg)
+git push
+
+git branch <name> 			(creates new branch)
+git branch -l 				(lists branches)
+git branch <name> -d 			(deletes branch locally)
+git switch <branch> 			(changes into this branch)(creates new one if doesn't exist yet)
+git status					(gives status of local git repo)
+git restore (--stage) <name>		(restores chnages (from stage) to local git repo)
+git fetch -a / -p				(gets Metadata from remote repo)
+git checkout <branch>			(adds fetched (new) branch to your local git repo)
+git pull -a / -p				(merges this new branch (might want to do fetch first))
+
+git stash (<stashname>)			(zwischenspeichert commits, die "nicht gut genug sind" um öffentlich committed zu werden)
+git apply (<stashname>)			(restores stash (specif one 
+
+git push -u origin branch2 		(pushes new branch2 to repo(origin)) (-u = set upstream)
+git push origin --delete branch2	(pushes deletation of branch to remote repo)
+
+git log 					(shows commit log) exit it with [ESC], then [SHIFT]+[z]+[z])
+git reset (<commit nr>)||(HEAD~1)			(resets log as well as commit, (soft=to stage, medium=default, hard=deletes everything))
+git revert (<commit nr>)		(reverts only the commit, optional give a commit you want reverted to)
+
+git clean 					(cleans local git repo, -n dry run, -f force)
+echo <text> > <filename>		overwrites texts in file with <filename> (overwriting old text)
+echo <text> >> <filename>		Adds texts to file with <filename> (keeping old text)

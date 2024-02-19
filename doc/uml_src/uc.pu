@@ -1,0 +1,42 @@
+@startuml
+
+
+skinparam linetype ortho
+
+:User: as User
+:Program: as Program
+
+rectangle Simulation {
+(Request start of simulation) as C1
+(Simulate result) as C2
+(Request change of starting conditions) as C3
+(Setup new conditions) as C4
+(Request stop of simulation) as C5
+(Display results) as C6
+(Request simulation information) as C7
+(Request special command) as C8
+(Execute special command) as C9
+}
+
+User -- C1
+C1 -- C2
+C2 --> C6 
+C6 -- Program
+
+User -- C3
+C3 -- C4
+C4 --> C1
+
+User -- C5
+C5 --> C6
+
+User -- C7
+C7 --> C6
+
+User -- C8
+C8 --> C9
+C9 -- Program
+
+Note top of C8: Special commands can include kill(), spawn(), (eastereggs), etc...
+
+@enduml

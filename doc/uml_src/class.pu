@@ -1,0 +1,105 @@
+@startuml
+
+left to right direction
+
+
+abstract Main{
+}
+
+rectangle Engine{
+
+class Game_Simulator{
+{method} eden()
+{method} create_slot()
+{method} calculate_step()
+{method} create map()
+}
+
+class Game_Evaluation{
+{field} nr_fox
+{field} nr_rabbit
+{field} nr_grass
+{method} update()
+}
+
+class Game_Visualizer{
+{method} display_game()
+{method} display_values()
+}
+
+}
+
+
+rectangle Board{
+
+class Slots{
+}
+
+class Map{
+{field} map_size
+}
+
+}
+
+rectangle SlotStates{
+
+class Living{
+{field} age
+{method} incr_age();
+}
+
+class Creature{
+{field} hunger_lvl
+{method} eat()
+{method} die()
+{method} move()
+{method} reproduce()
+{method} incr_hunger_lvl()
+}
+
+class Nature{
+{method} gettin eaten()
+{method} grow()
+}
+
+
+Class Fox{
+}
+
+Class Rabbit{
+}
+
+Class Grass{
+}
+
+Class Empty{
+}
+
+}
+
+
+Main "[call]" --> Game_Evaluation
+Map "[call]" --> Living
+
+Map "1" *-- Slots
+Slots  *-- "0-1" Living 
+
+Game_Simulator -- Map
+Game_Simulator --> Living
+Game_Evaluation --> Game_Visualizer
+Game_Visualizer --> Map
+Game_Evaluation -- Game_Simulator
+
+Living <|-- Nature
+Living <|-- Creature
+Creature <|-- Fox
+Creature <|-- Rabbit
+Nature <|-- Grass
+Nature <|-- Empty
+
+Fox "[hunt]" -- Rabbit :>
+Rabbit "[eat]" -- Grass :>
+Grass "[Grow]" -- Empty :>
+
+
+@enduml

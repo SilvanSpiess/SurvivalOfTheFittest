@@ -1,0 +1,12 @@
+maxAgeFox: 9
+maxAgeRabbit: 7
+maxAmountFoxes: 5
+maxAmountRabbits: 7
+maxHungerFox: 5
+maxHungerRabbit: 2
+maxLevelGrass: 5
+minAgeMateFox: 3
+minAgeMateRabbit: 2
+playgroundSize: 20
+simCycles: 100
+simDelay: 500
