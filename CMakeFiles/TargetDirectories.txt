@@ -1,3 +1,0 @@
-/cygdrive/c/Users/silsp/Downloads/wotf github/SurvivalOfTheFittest/CMakeFiles/fittest.dir
-/cygdrive/c/Users/silsp/Downloads/wotf github/SurvivalOfTheFittest/CMakeFiles/edit_cache.dir
-/cygdrive/c/Users/silsp/Downloads/wotf github/SurvivalOfTheFittest/CMakeFiles/rebuild_cache.dir

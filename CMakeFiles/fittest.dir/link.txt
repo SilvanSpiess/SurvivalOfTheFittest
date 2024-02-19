@@ -1,1 +1,0 @@
-g++ -Wl,--enable-auto-import CMakeFiles/fittest.dir/src/main.cpp.o CMakeFiles/fittest.dir/src/Engine.cpp.o CMakeFiles/fittest.dir/src/Living.cpp.o CMakeFiles/fittest.dir/src/FileHandler.cpp.o CMakeFiles/fittest.dir/src/ProjectHandler.cpp.o -o bin/fittest.exe -Wl,--out-implib,libfittest.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
