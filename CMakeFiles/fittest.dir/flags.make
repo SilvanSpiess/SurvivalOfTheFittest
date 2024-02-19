@@ -4,7 +4,7 @@
 # compile CXX with g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/cygdrive/c/Users/silsp/projects/wotf-grp-09/include
+CXX_INCLUDES = -I"/cygdrive/c/Users/silsp/Downloads/wotf github/SurvivalOfTheFittest/include"
 
 CXX_FLAGS = -O0 -ggdb -Wall -Wextra -Wpedantic -std=c++20 -Wconversion -Wshadow -Wnull-dereference -Wformat
 
